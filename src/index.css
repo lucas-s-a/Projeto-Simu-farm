@@ -50,3 +50,9 @@
     grid-template-columns: auto auto auto auto;
     row-gap:50px
 }
+/*Criar.js - Página Post junto com Editar.js - Página Put*/
+.enviodedados{
+    border:black 1px solid;
+}
+
+/**/

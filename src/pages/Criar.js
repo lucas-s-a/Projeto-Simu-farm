@@ -1,12 +1,13 @@
 import axios from "axios";
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import estilos from "./FormuModel.module.css"
 
 const Novod = () => {
   const [nome, setNome] = useState("");
-  const [preco, setpreco] = useState("");
-  const [descricao, setdescricao] = useState("");
-  const [imgl, setimgl] = useState("");
+  const [preco, setPreco] = useState("");
+  const [descricao, setDescricao] = useState("");
+  const [imgl, setImgl] = useState("");
 
   const navigate = useNavigate();
   const [barra,setBarra] = useState('')
@@ -25,12 +26,15 @@ const Novod = () => {
   }
   
   return(<div>
-    <div>
-      <h1>Adicionar um novo produto</h1>
+    <div className="itemheader">
+      <header>
+        <h1>Adicionar um novo produto</h1>
+      </header>
     </div>
-    <div>
+    <main>
       <div>
-        <h2>Primeiro Escolha o tipo de produto</h2></div>
+        <h2>Primeiro Escolha o tipo de produto</h2>
+      </div>
       <div>
         <select onChange={(e)=>{const selecao = e.target.value;setBarra(selecao)}}>
           <option value="Erro">---------</option>
@@ -48,51 +52,52 @@ const Novod = () => {
           <option value="Higiene-Pessoal">Higiene Pessoal</option>
         </select>
       </div>
-    </div>
-    <div>
       <div>
-        <h2>Agora informe as especificações do novo produto</h2>
+        <div>
+          <h2>Agora informe as especificações do novo produto</h2>
+        </div>
+        <div>
+          <form className={estilos.caixaform}>
+            <div className={estilos.itemcaixatitulo}>
+              <label className={estilos.itemlabel1}>Nome:</label>
+              <label className={estilos.itemlabel2}>Preço:</label>
+              <label className={estilos.itemlabel3}>Descrição:</label>
+              <label className={estilos.itemlabel4}>Url da Imagem:</label>
+            </div>
+            <div className={estilos.itemcaixatitulo}>
+              <input className={estilos.iteminput1}
+                value={nome}
+                type="text"
+                onChange={(e) => setNome(e.target.value)}
+              />
+              <input className={estilos.iteminput2}
+                value={preco}
+                type="text"
+                onChange={(e) => setPreco(e.target.value)}
+              />
+              <input className={estilos.iteminput3}
+                value={descricao}
+                type="text"
+                onChange={(e) => setDescricao(e.target.value)}
+              />
+              <input className={estilos.iteminput4}
+                value={imgl}
+              type="text"
+              onChange={(e) => setImgl(e.target.value)}
+              />
+            </div>    
+          </form>
+          <br></br>
+          <div>
+            <button
+              type="submit"
+              onClick={submitForm}
+              >Adicionar a lista
+            </button>
+          </div>
+        </div>
       </div>
-      <div>
-        <form>
-          <label>Nome do medicamento</label>
-          <input
-            value={nome}
-            type="text"
-            onChange={(e) => setNome(e.target.value)}
-          />
-          <br></br>
-          <label>Preço do medicamento</label>
-          <input
-            value={preco}
-            type="text"
-            onChange={(e) => setpreco(e.target.value)}
-          />
-          <br></br>
-          <label>Descrição do Medicamento</label>
-          <input
-            value={descricao}
-            type="text"
-            onChange={(e) => setdescricao(e.target.value)}
-          />
-          <br></br>
-          <label>Url da Imagem</label>
-          <input
-            value={imgl}
-            type="text"
-            onChange={(e) => setimgl(e.target.value)}
-          />
-          <br></br>
-          <br></br>
-          <button
-          className="bg-teal-600 outline-none font-bold border text-white border-zinc-400 py-4 pl-4 mt-4"
-          type="submit"
-          onClick={submitForm}
-          >Adicionar a lista
-          </button>
-        </form>
-      </div>
-    </div>
+    </main>
     </div>);
   };
   

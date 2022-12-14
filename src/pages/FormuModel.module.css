@@ -1,0 +1,50 @@
+.caixaform{
+    border: 1px solid black;
+    display: grid;
+    grid-template-areas:
+    "a";
+}
+.itemcaixatitulo{
+    grid-area: a;
+    align-self: center;
+    justify-self:stretch;
+    border: 1px solid black;
+    display: grid;
+    grid-template-areas:
+    " aa ee "
+    " bb ff "
+    " cc gg "
+    " dd hh ";
+}
+.itemlabel1{
+    grid-area: aa;
+    padding: 2px;
+    padding-left: 100px;
+}
+.itemlabel2{
+    grid-area: bb;
+    padding: 2px;
+    padding-left: 100px;
+}
+.itemlabel3{
+    grid-area: cc;
+    padding: 1px;
+    padding-left: 100px;
+}
+.itemlabel4{
+    grid-area: dd;
+    padding: 1px;
+    padding-left: 100px;
+}
+.iteminput1{
+    grid-area: ee;
+}
+.iteminput2{
+    grid-area: ff;    
+}
+.iteminput3{
+    grid-area: gg;
+}
+.iteminput4{
+    grid-area: hh;
+}

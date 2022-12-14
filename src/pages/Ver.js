@@ -13,14 +13,14 @@ const Listar = () => {
     });
   }
   return (<>
-  <div class="container-grid">
-    <header class="itemheader">
+  <div className="container-grid">
+    <header className="itemheader">
       <h1>Veja aqui o itens que estão na sua lista de desejos</h1>
     </header>
     <br></br>
     <main>
-      <div class="caixa">
-        <div class="item1">
+      <div className="caixa">
+        <div className="item1">
           <nav>
             <h1>todos os dados</h1>
           </nav>
@@ -34,7 +34,7 @@ const Listar = () => {
             <option value="Saude_Sexual">Público Masculino</option>
             <option value="Ortopedicos">Ortopedicos</option>
             <option value="Alimentacao_infantil">Alimentacao Infantil</option>
-            <option value="Suplementos_Academia">Suplementos_Academia</option>
+            <option value="Suplementos_Academia">Suplementos Academia</option>
             <option value="Beleza">Beleza</option>
             <option value="Cabelo">Cabelo</option>
             <option value="Higiene-Pessoal">Higiene Pessoal</option>
@@ -45,14 +45,14 @@ const Listar = () => {
             <br></br>
           </div>
         </div>
-        <div class="item2">
-          <button><Link to={"/Post"} >Add Users</Link></button>
+        <div className="item2">
+          <button><Link to={"/Post"} >Adionar Novos itens</Link></button>
         </div>
       </div>
       <div>
       {dados.map((data) => {
         return <div key={data.id}>
-          <div class="caixadados">
+          <div className="caixadados">
             <div>
               <img width="100px" src={data.imgl} alt="imagenspegadas"/>
             </div>

@@ -1,4 +1,5 @@
 import axios from "axios";
+import estilos from "./FormuModel.module.css"
 import React, { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 
@@ -36,46 +37,50 @@ const Editd = () => {
   const navigate = useNavigate();
 
   return(<div>
-    <div>
-      <h1>Atualizar Produto da lista {barra}</h1>
+    <div className="itemheader">
+      <header>
+        <h1>Atualizar Produto da lista {barra}</h1>
+      </header>
     </div>
     <div>
-    <form>
-          <label>Nome do medicamento</label>
-          <input
-            value={nome}
-            type="text"
-            onChange={(e) => setNome(e.target.value)}
-          />
-          <br></br>
-          <label>Preço do medicamento</label>
-          <input
-            value={preco}
-            type="text"
-            onChange={(e) => setPreco(e.target.value)}
-          />
-          <br></br>
-          <label>Descrição do medicamento</label>
-          <input
-            value={descricao}
-            type="text"
-            onChange={(e) => setDescricao(e.target.value)}
-          />
-          <br></br>
-          <label>Url da Foto do Medicamento</label>
-          <input
-            value={imgl}
-            type="text"
-            onChange={(e) => setImgl(e.target.value)}
-          />
-          <br></br>
-          <button
-          className="bg-teal-600 outline-none font-bold border text-white border-zinc-400 py-4 pl-4 mt-4"
+      <form className={estilos.caixaform}>
+            <div className={estilos.itemcaixatitulo}>
+              <label className={estilos.itemlabel1}>Nome:</label>
+              <label className={estilos.itemlabel2}>Preço:</label>
+              <label className={estilos.itemlabel3}>Descrição:</label>
+              <label className={estilos.itemlabel4}>Url da Imagem:</label>
+            </div>
+            <div className={estilos.itemcaixatitulo}>
+              <input className={estilos.iteminput1}
+                value={nome}
+                type="text"
+                onChange={(e) => setNome(e.target.value)}
+              />
+              <input className={estilos.iteminput2}
+                value={preco}
+                type="text"
+                onChange={(e) => setPreco(e.target.value)}
+              />
+              <input className={estilos.iteminput3}
+                value={descricao}
+                type="text"
+                onChange={(e) => setDescricao(e.target.value)}
+              />
+              <input className={estilos.iteminput4}
+                value={imgl}
+              type="text"
+              onChange={(e) => setImgl(e.target.value)}
+              />
+            </div>
+      </form>
+      <br></br>
+      <div>
+        <button
           type="submit"
           onClick={Atualizar}
           >Atualizar os Seguintes Dados
-          </button>
-        </form>
+        </button>
+      </div>
     </div>
     </div>);
 };
