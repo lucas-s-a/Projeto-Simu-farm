@@ -41,26 +41,34 @@ const Editd = () => {
     </div>
     <div>
     <form>
+          <label>Nome do medicamento</label>
           <input
             value={nome}
             type="text"
             onChange={(e) => setNome(e.target.value)}
           />
+          <br></br>
+          <label>Preço do medicamento</label>
           <input
             value={preco}
             type="text"
             onChange={(e) => setPreco(e.target.value)}
           />
+          <br></br>
+          <label>Descrição do medicamento</label>
           <input
             value={descricao}
             type="text"
             onChange={(e) => setDescricao(e.target.value)}
           />
+          <br></br>
+          <label>Url da Foto do Medicamento</label>
           <input
             value={imgl}
             type="text"
             onChange={(e) => setImgl(e.target.value)}
           />
+          <br></br>
           <button
           className="bg-teal-600 outline-none font-bold border text-white border-zinc-400 py-4 pl-4 mt-4"
           type="submit"

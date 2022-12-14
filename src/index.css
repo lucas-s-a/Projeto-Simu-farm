@@ -1,0 +1,52 @@
+/*Layout.js - Cabeçário Geral*/
+.emlinhas{
+    display: grid;
+    row-gap: 5px;
+    grid-template-columns: auto auto auto auto;
+}
+.itens{
+    border: 1px black solid;
+    list-style: none;
+}
+.emlinha2{
+    display: grid;
+    row-gap: 5px;
+    grid-template-columns: auto auto
+    ;
+}
+.posimg{
+    margin: 30px;
+    padding: 10px;
+    border: 1px black solid;
+}
+.i2{
+    border: 1px black solid;
+}
+
+/*Ver.js - Página Get*/
+
+.container-grid{
+    display: grid;
+    grid-template-areas:'header'
+}
+.itemheader{
+    grid-area: header;
+    text-align: center;
+}
+.item1{
+    grid-area:item1
+}
+.item2{
+    grid-area:item2
+}
+.caixa{
+    display: grid;
+    grid-template-areas:
+        "item1 item1 item1 item2";
+}
+.caixadados{
+    border:black 1px solid;
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    row-gap:50px
+}

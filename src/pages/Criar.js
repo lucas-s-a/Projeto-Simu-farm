@@ -55,26 +55,35 @@ const Novod = () => {
       </div>
       <div>
         <form>
+          <label>Nome do medicamento</label>
           <input
             value={nome}
             type="text"
             onChange={(e) => setNome(e.target.value)}
           />
+          <br></br>
+          <label>Preço do medicamento</label>
           <input
             value={preco}
             type="text"
             onChange={(e) => setpreco(e.target.value)}
           />
+          <br></br>
+          <label>Descrição do Medicamento</label>
           <input
             value={descricao}
             type="text"
             onChange={(e) => setdescricao(e.target.value)}
           />
+          <br></br>
+          <label>Url da Imagem</label>
           <input
             value={imgl}
             type="text"
             onChange={(e) => setimgl(e.target.value)}
           />
+          <br></br>
+          <br></br>
           <button
           className="bg-teal-600 outline-none font-bold border text-white border-zinc-400 py-4 pl-4 mt-4"
           type="submit"

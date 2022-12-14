@@ -7,6 +7,7 @@ import Post from "./pages/Criar";
 import Edit from "./pages/Editar";
 import Del from "./pages/Del";
 import NoPage from "./NoPage";
+import "./index.css"
 
 export default function App() {
   return (
