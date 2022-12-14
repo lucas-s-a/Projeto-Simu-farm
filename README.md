@@ -55,3 +55,5 @@ npm i framer-motion
 
 
 após isso apenas dar o comando npm start que irá executar a página.
+
+a página foi hospedada no vercel para melhorar a visualização ,mas funciona no vs code seguindo os passos indicados
