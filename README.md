@@ -24,8 +24,23 @@ Ele funcionára com servidor próprio adicionando um arquivo db.json e configura
 
 Para iniciar no VScode:
 . criar uma pasta abrir no vscode e executar o comando npx-create-app nomedapasta .
-apos isso executar os recursos extras da página:
+para verificar se está funcionando você pode executar no terminal
+os comandos
 
+cd nomedapasta(o Nome que voce escolheu)
+npm start
+abrindo normalmente a página do react voce pode continuar o processo
+
+
+
+apos isso voce irá copiar os arquivos da baixados e substituir
+as pastas : public , src e os arquivos package-lock.json e package.json
+
+
+abrir o terminal do vs code
+verifique se a ultimo caminho está escrito o nomedapasta que você indicou ao instalar o app react
+
+Agora voce irá precisar instalar os recursos da biblioteca React
 
 npm i -D react-router-Dom
 
