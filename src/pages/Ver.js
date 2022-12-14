@@ -1,16 +1,22 @@
 import axios from "axios";
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import Loading from "./Loading"
 
 const Listar = () => {
   const [dados,setDados] = useState([]);
-  const [barra,setBarra] = useState('')
+  const [barra,setBarra] = useState('');
+  const [removerLoading,setRemoverLoading] = useState(false)
   
   let Url = `https://projeto-apredendoo-servidor-json.vercel.app/`+barra;
   function Cdados() {
-    axios.get(Url).then((res) => {
-      setDados(res.data);
-    });
+    setRemoverLoading(true)
+    setTimeout(() => {
+      axios.get(Url).then((res) => {
+        setDados(res.data);
+        setRemoverLoading(false)
+      });
+    },2000)
   }
   return (<>
   <div className="container-grid">
@@ -44,9 +50,10 @@ const Listar = () => {
             <button onClick={Cdados}>Buscar</button>
             <br></br>
           </div>
+          {removerLoading && <Loading />}
         </div>
         <div className="item2">
-          <button><Link to={"/Post"} >Adionar Novos itens</Link></button>
+          <button><Link to={"/Post"} >Adicionar Novos itens</Link></button>
         </div>
       </div>
       <div>
@@ -70,7 +77,7 @@ const Listar = () => {
               <Link to={`/Deletar/${barra}/${data.id}`}>Deletar</Link>
             </div>
           </div>
-        </div>
+        </div> 
       })}
       </div>
     </main>

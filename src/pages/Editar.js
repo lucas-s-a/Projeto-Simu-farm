@@ -1,5 +1,5 @@
 import axios from "axios";
-import estilos from "./FormuModel.module.css"
+import estilos from "./Formestilo.module.css"
 import React, { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 
@@ -31,7 +31,7 @@ const Editd = () => {
 
   function Atualizar(e) {
     e.preventDefault();
-    axios.put(`https://projeto-apredendoo-servidor-json.vercel.app/${barra}/${id}`, data).then(navigate("/"));
+    axios.put(`https://projeto-apredendoo-servidor-json.vercel.app/${barra}/${id}`, data).then(navigate("/Get"));
   }
 
   const navigate = useNavigate();

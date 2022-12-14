@@ -1,7 +1,7 @@
 import axios from "axios";
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import estilos from "./FormuModel.module.css"
+import estilos from "./Formestilo.module.css";
 
 const Novod = () => {
   const [nome, setNome] = useState("");
@@ -22,7 +22,7 @@ const Novod = () => {
 
   function submitForm(e) {
     e.preventDefault();
-    axios.post(Url, data).then(navigate("/"));
+    axios.post(Url, data).then(navigate("/Get"));
   }
   
   return(<div>

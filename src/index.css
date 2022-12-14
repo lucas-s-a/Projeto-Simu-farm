@@ -11,8 +11,7 @@
 .emlinha2{
     display: grid;
     row-gap: 5px;
-    grid-template-columns: auto auto
-    ;
+    grid-template-columns: auto auto;
 }
 .posimg{
     margin: 30px;
@@ -50,9 +49,4 @@
     grid-template-columns: auto auto auto auto;
     row-gap:50px
 }
-/*Criar.js - Página Post junto com Editar.js - Página Put*/
-.enviodedados{
-    border:black 1px solid;
-}
 
-/**/

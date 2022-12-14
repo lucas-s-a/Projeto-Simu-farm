@@ -18,55 +18,43 @@ const Deld = () => {
   const navigate = useNavigate();
 
   function deletar() {
-    axios.delete(`https://projeto-apredendoo-servidor-json.vercel.app/${barra}/${id}`).then(navigate("/"));
+    axios.delete(`https://projeto-apredendoo-servidor-json.vercel.app/${barra}/${id}`).then(navigate("/Get"));
   }
 
   return(<div>
-    <div>
-      <h1>Risca da Lista</h1>
+    <div className="itemheader">
+      <header>
+        <h1>Risca da Lista</h1>
+      </header>
     </div>
     <div>
-    <div>
+      <div>
         <Link to={`/`}>Manter na Lista</Link>
         {dados && (
           <div>
-            <div>
+            <div className="i2">
               <h2>
-                Nome:
+                Nome: {dados.nome}
               </h2>
-              <h3>
-                {dados.nome}
-              </h3>
               <h2>
-                Preço
+                Preço: {dados.preco}
               </h2>
-              <h3>
-                {dados.preco}
-              </h3>
               <h2>
-                Descrição
+                Descrição: {dados.descricao}
               </h2>
-              <h3>
-                {dados.descricao}
-              </h3>
               <h2>
-                Foto
+                Foto :{dados.imgl}
               </h2>
-              <h3>
-                {dados.imgl}
-              </h3>
             </div>
+            <br></br>
             <div>
-            </div>
-            <div>
-            <button onClick={()=>deletar()}>Riscar da lista</button>
+              <button onClick={()=>deletar()}>Riscar da lista</button>
             </div>
           </div>
         )}
       </div>
     </div>
-    </div>
-    );
+  </div>);
 };
   
 export default Deld;
