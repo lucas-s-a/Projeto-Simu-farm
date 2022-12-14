@@ -1,6 +1,6 @@
 import axios from "axios";
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 const Novod = () => {
@@ -10,8 +10,8 @@ const Novod = () => {
   const [imgl, setImgl] = useState("");
 
   const navigate = useNavigate();
-  const [barra,setBarra] = useState('')
-  let Url = `https://projeto-apredendoo-servidor-json.vercel.app/`+barra;
+  const [barra, setBarra] = useState('')
+  let Url = `https://projeto-apredendoo-servidor-json.vercel.app/` + barra;
 
   const data = {
     nome: nome,
@@ -22,10 +22,17 @@ const Novod = () => {
 
   function submitForm(e) {
     e.preventDefault();
-    axios.post(Url, data).then(navigate("/Get"));
+    if (nome.length === 0 || descricao.length === 0 || preco.length === 0 || imgl.length === 0) {
+      alert("Existe algum campo em branco")
+    } else if (descricao.length > 120) {
+      alert("Sua descrição atingiu o número máximo de 120 caracteres permitidos")
+    } else {
+      axios.post(Url, data).then(navigate("/Get"));
+    }
+
   }
-  
-  return(<div>
+
+  return (<div>
     <div className="itemheader">
       <header>
         <h1>Adicionar um novo produto</h1>
@@ -36,7 +43,7 @@ const Novod = () => {
         <h2>Primeiro Escolha o tipo de produto</h2>
       </div>
       <div className="seleção">
-        <select className="form-select" onChange={(e)=>{const selecao = e.target.value;setBarra(selecao)}}>
+        <select className="form-select" onChange={(e) => { const selecao = e.target.value; setBarra(selecao) }}>
           <option value="">Selecione</option>
           <option value="Medicamentos">Medicamentos</option>
           <option value="Vitaminas">Vitaminas</option>
@@ -52,12 +59,12 @@ const Novod = () => {
           <option value="Higiene-Pessoal">Higiene Pessoal</option>
         </select>
       </div>
-      <div>
+      <div className="boxcriardados">
         <div className="dadostitulo">
           <h2>Agora informe as especificações do novo produto</h2>
         </div>
         <div className="dadostexto">
-          <form className="row g-3">
+          <form className="row g-3 caixadel3">
             <div className="col-md-4">
               <label className="form-label">Nome:</label>
               <input className="form-control"
@@ -86,23 +93,22 @@ const Novod = () => {
               <label className="form-label">Url da Imagem:</label>
               <textarea className="form-control"
                 value={imgl}
-              type="text"
-              onChange={(e) => setImgl(e.target.value)}
+                type="text"
+                onChange={(e) => setImgl(e.target.value)}
               />
-            </div>    
+            </div>
+            <br></br>
+            <div className="caixadebotoes">
+              <Link to={`/Get`} ><button className="estilobotaobrilho tb">Manter na Lista</button></Link>
+              <button className="bt2 estilobotaobrilho tb" type="submit"
+                onClick={submitForm}
+              >Adicionar a lista</button>
+            </div>
           </form>
-          <br></br>
-          <div>
-            <button
-              type="submit"
-              onClick={submitForm}
-              >Adicionar a lista
-            </button>
-          </div>
         </div>
       </div>
     </main>
-    </div>);
-  };
-  
-  export default Novod;
+  </div>);
+};
+
+export default Novod;

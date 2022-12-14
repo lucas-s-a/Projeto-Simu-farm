@@ -1,10 +1,10 @@
+﻿import React, { useEffect, useState } from "react";
 import axios from "axios";
-import React, { useEffect, useState } from "react";
-import { useNavigate, useParams } from "react-router-dom";
+import { useNavigate, useParams,Link } from "react-router-dom";
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 const Editd = () => {
-  const { id,barra } = useParams();
+  const { id, barra } = useParams();
 
   const [nome, setNome] = useState("");
   const [preco, setPreco] = useState("");
@@ -18,73 +18,76 @@ const Editd = () => {
       setDescricao(res.data.descricao);
       setImgl(res.data.imgl);
     });
-  }, []);
+  }, [id,barra]);
 
   const data = {
     nome: nome,
     preco: preco,
     descricao: descricao,
-    imgl : imgl
+    imgl: imgl
   };
 
   function Atualizar(e) {
     e.preventDefault();
-    axios.put(`https://projeto-apredendoo-servidor-json.vercel.app/${barra}/${id}`, data).then(navigate("/Get"));
+    if (nome.length === 0 || descricao.length === 0 || preco.length === 0 || imgl.length === 0) {
+      alert("Existe algum campo em branco")
+    } else if (descricao.length > 120) {
+      alert("Sua descrição atingiu o número máximo de 120 caracteres permitidos")
+    } else {
+      axios.put(`https://projeto-apredendoo-servidor-json.vercel.app/${barra}/${id}`, data).then(navigate("/Get"));
+    }
   }
-
   const navigate = useNavigate();
 
-  return(<div>
+  return (<div>
     <div className="itemheader">
       <header>
         <h1>Atualizar Produto da lista {barra}</h1>
       </header>
     </div>
-    <div className="dadostexto">
-      <form class="row g-3">
-            <div class="col-md-4">
-              <label class="form-label">Nome:</label>
-              <input class="form-control"
-                value={nome}
-                type="text"
-                onChange={(e) => setNome(e.target.value)}
-              />
-            </div>
-            <div>
-              <label class="form-label">Preço:</label>
-              <input class="form-control"
-                value={preco}
-                type="text"
-                onChange={(e) => setPreco(e.target.value)}
-              />
-            </div>
-            <div>
-              <label class="form-label">Descrição:</label>
-              <textarea class="form-control"
-                value={descricao}
-                type="text"
-                onChange={(e) => setDescricao(e.target.value)}
-              />
-            </div>
-            <div>
-              <label class="form-label">Url da Imagem:</label>
-              <textarea class="form-control"
-                value={imgl}
-              type="text"
-              onChange={(e) => setImgl(e.target.value)}
-              />
-            </div>    
+    <div className="dadostextoeditar">
+      <form className="row g-3">
+        <div className="col-md-4">
+          <label className="form-label">Nome:</label>
+          <input className="form-control"
+            value={nome}
+            type="text"
+            onChange={(e) => setNome(e.target.value)}
+          />
+        </div>
+        <div>
+          <label className="form-label">Preço:</label>
+          <input className="form-control"
+            value={preco}
+            type="text"
+            onChange={(e) => setPreco(e.target.value)}
+          />
+        </div>
+        <div>
+          <label className="form-label">Descrição:</label>
+          <textarea className="form-control"
+            value={descricao}
+            type="text"
+            onChange={(e) => setDescricao(e.target.value)}
+          />
+        </div>
+        <div>
+          <label className="form-label">Url da Imagem:</label>
+          <textarea className="form-control"
+            value={imgl}
+            type="text"
+            onChange={(e) => setImgl(e.target.value)}
+          />
+        </div>
+        <br></br>
+        <div className="caixadebotoes">
+          <Link to={`/Get`} ><button className="estilobotaobrilho tb">Manter na Lista</button></Link>
+          <button className="bt2 estilobotaobrilho tb" type="submit"
+            onClick={Atualizar}
+          >Atualizar os Seguintes Dados</button>
+        </div>
       </form>
-      <br></br>
-      <div>
-        <button 
-          type="submit"
-          onClick={Atualizar}
-          >Atualizar os Seguintes Dados
-        </button>
-      </div>
     </div>
-    </div>);
+  </div>);
 };
-
 export default Editd;

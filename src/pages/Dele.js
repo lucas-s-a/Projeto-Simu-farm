@@ -3,17 +3,13 @@ import React, { useEffect, useState } from "react";
 import { Link, useNavigate, useParams } from "react-router-dom";
 
 const Deld = () => {
-  const { id,barra } = useParams();
-  const [dados, setDados] = useState([]);
-  console.log(id)
-  console.log(barra)
-  
-  
+  const { barra,id } = useParams();
+  const [dados, setDados] = useState([]);  
   useEffect(() => {
     axios.get(`https://projeto-apredendoo-servidor-json.vercel.app/${barra}/${id}`).then((res) => {
       setDados(res.data);
     });
-  }, []);
+  }, [barra,id]);
 
   const navigate = useNavigate();
 
@@ -48,8 +44,8 @@ const Deld = () => {
           </div>)}
       </div>
       <div className="caixadebotoes">
-        <Link to={`/`} className="bt1">Manter na Lista</Link>
-        <button className="bt2" onClick={()=>deletar()}>Riscar da lista</button>
+        <Link to={`/Get`} ><button className="estilobotaobrilho tb">Manter na Lista</button></Link>
+        <button className="bt2 estilobotaobrilho tb" onClick={()=>deletar()}>Riscar da lista</button>
       </div>
     </main>
   </div>);

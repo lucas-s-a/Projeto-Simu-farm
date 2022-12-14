@@ -1,12 +1,55 @@
+/*Edições gerais*/
 html ,body {
     margin:0;
     padding:0;
+}
+#slide{
+    justify-content: space-between;
+    width: 100%;
+    margin-top: 50px;
+}
+
+#slide h1{
+    color: #032CA6;
+    font-size: 2.6rem;
+}
+
+#slide li{
+    font-size: 2.0rem;
+}
+
+#slide .col-md-4 p{
+    font-size: 20px;
+    text-align: justify;
+}
+
+.botao-slide{
+    background: linear-gradient(to bottom left, #D90416 25%, #0339A6);
+    font-family:'Roboto', sans-serif;
+    font-weight: 400;
+    border: none;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    font-size: 20px;
+    margin-bottom:10px;
+    cursor: pointer;
+    border-radius: 5px;
+    width: 100%;
+    height: 42px;
+    transition: background 500ms, color 500ms;
+}
+
+.botao-slide:hover{
+    background: transparent;
+    border: 2px solid #700276;
+    color: #700276;
 }
 /*Layout.js - Cabeçário Geral*/
 .blocop{
     display: grid;
     grid-template-areas: 
-    "eb1 . eb2 .";
+    "eb1 . eb2 eb2";
     background-color: #1F549E
 }
 .ebloco1{
@@ -17,8 +60,6 @@ html ,body {
 .ebloco2{
     grid-area: eb2;
     display: grid;
-    grid-template-areas: 
-    "ib21 ib22 ib23 ib24";
 }
 .ordemli{
     background: rgba(244, 43, 8, 0.8);
@@ -31,6 +72,89 @@ html ,body {
 .ordemli :hover{
     background: #D94A70;
 }
+
+/*Menu Hamburger*/
+
+.menu_hamburger{
+    cursor: pointer;
+    display: none;
+    flex-direction: column;
+}
+.menu_hamburger div{
+    width: 32px;
+    height: 2px;
+    background: #fff;
+    margin: 4px;
+    transition: 0.3s;
+}
+@media(max-width: 620px){
+    .nav{
+        display: none;
+        position: absolute;
+        top: 12.7vh;
+        right: 0vh;
+        width: 50vw;
+        height: 100%;
+        background: #23232e;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 25px;
+        z-index: 1;
+        transform: translateX(100%);
+    }
+    .ordemli{
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        background: none;
+    }
+    .estilobotao{
+        background: none;
+        color: #fff;
+    }
+    .menu_hamburger{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        left: 50px;
+    }
+    .nav.active{
+        display: grid;
+        transition: transform 1s ease-in-out;
+        animation: menuFade 2s ease forwards 0.3s;
+    }
+    
+    .menu_hamburger.active .linha1{
+        transform: rotate(-45deg) translate(-8px, 8px);
+    }
+    .menu_hamburger.active .linha2{
+        opacity: 0;
+    }
+    .menu_hamburger.active .linha3{
+        transform: rotate(45deg) translate(-5px, -7px);
+    }
+
+    .container{
+        z-index: -1;
+    }
+
+    @keyframes menuFade {
+        from{
+            opacity: 0;
+            transform: translateX(50px);
+        }
+        to{
+            opacity: 1;
+            transform: translateX(0);
+        }
+    }
+    .nav.active .ordemli, .estilobotao{
+        animation: menuFade 2s ease forwards 0.3s;
+    }
+}
+
 /*Ver.js - Página Get*/
 
 .container-grid{
@@ -41,18 +165,7 @@ html ,body {
     grid-area: header;
     text-align: center;
 }
-/* Main */
-.item1{
-    grid-area:item1
-}
-.item2{
-    grid-area:item2
-}
-.caixa{
-    display: grid;
-    grid-template-areas:
-        ". item1 . item2";
-}
+/* Carregamento */
 .caixagridcarregar{
     display:grid;
     grid-template-areas:
@@ -62,41 +175,167 @@ html ,body {
     grid-area: aa;
     display: grid;
     place-items: center;
-    padding: 10%;
+    padding: 5%;
+    margin:15px
 }
 /*Estilo dados*/
+.containerprincipal{
+    display:grid;
+    grid-template-areas: 
+    "caixaver1 caixaver2 caixaver2 caixaver2"
+    "caixaver1 caixaver3 caixaver3 caixaver3"
+    "caixaver1 caixaver3 caixaver3 caixaver3"
+}
+.caixaver1{
+    display: grid;
+    grid-area: caixaver1;
+    padding: 20px;
+    margin:10px;
+    width:250px;
+    background-color: rgba(82, 30, 30, 0.1);
+}
+.caixaver2{
+    display: grid;
+    grid-area: caixaver2;
+    padding: 5px;
+    gap:5px;
+    margin:10px;
+    grid-template-areas: 
+    "f4 f1 f1 f1"
+    "f4 f2 f2 ."
+    "f4 . f3 f3";
+    background-color: rgba(82, 30, 30, 0.1);
+}
+.elementocaixatitulo{
+    background-color: #4c6fb4;
+    grid-area: f1;
+    padding: 2px;
+    border: 2px solid black;
+    font-family:'Roboto', sans-serif;
+    color: white;
+    height: 60%;
+}
+@media(max-width: 700px){
+    .elementocaixatitulo{
+        font-size: 80%;
+    }
+    .selectmode{
+        font-size:13px;
+    }  
+}
+@media(max-width: 620px){
+    .caixaver1{
+        display: none;
+    }
+}
+.elementocaixaimagem{
+    grid-area: f4;
+    width: 200px;
+    height: 230px;
+}
+.elementobotaotitulo{
+    grid-area: f3;
+}
+.selectmode{
+    padding: 10px;
+    background-color: #4872c7;
+    grid-area: f2;
+    width:70%;
+    height: 80%;
+    color: white;
+}
+.tamanhoimagemcaixa{
+    width:100px;
+    height:100px
+}
+@media(max-width: 400px){
+    .itemheader{
+        font-size: 50%;
+    }
+    .elementocaixaimagem{
+        width:50%;
+        height: 50%;
+    }
+    .elementobotaotitulo{
+        width:50%;
+        font-size: 5px;
+    }
+    .selectmode{
+        width:65%;
+        height: 95%;
+        font-size:7px;
+    }
+}
+.caixaver3{
+    display: grid;
+    grid-area: caixaver3;
+    padding: 10px;
+}
+/*estilo dados layout*/
 .caixadedados{
     border-radius: 7px;
     border: 5px solid gray;
-    padding: 5px;
+    padding: 0;
+    gap:20px;
     background-color: #1F549E;
     display:grid;
-    gap:20px;
-    grid-template-areas:
-     "caixadeinformação caixadeinformação caixadeinformação caixadeinformação";
+    grid-template-columns: repeat(auto-fit,minmax(10rem,1fr));
 }
-.caixadeinformação {
-    padding: 5px;
-    border:solid 10px #737373;
-    border-radius: 7px;
-    background: linear-gradient(to bottom right,#F2F2F2,#183B6A);
-}
-.imag{
-    padding: 2px;
-    display: grid;
+.dadosbuscados {
+    border:1px solid black;
+    height: 10rem;
     place-items: center;
-}
-.dadostexto{
-    list-style: none;
-    height:200px
-}
-.links{
-    padding: 5px;
     display: grid;
-    place-items: center;
 }
-.linktamanho{
-    width:30vh
+.tamanhocaixa{
+    height:100%;
+    padding: 5px;
+}
+.coresbtn{
+    background: rgba(25, 3, 92, 0.8);
+    border-radius: 5px;
+    border: #23232e solid 1px;
+}
+/*estilo visual botao pagina Ver.js*/
+.estilobotaobrilho{
+    position: relative;
+    left: 2%;
+    text-align: center;
+    background: black;
+    font-size: 18px;
+    color: white;
+    margin:30px;
+    border-radius: 60px;
+    border: 4px solid black;
+    box-shadow: inset 0 0 30px rgb(97, 96, 96);
+  }
+.estilobotaobrilho::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 10px;
+    width: 10px;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.1);
+    transition: 0.5s;
+    transform: skewX(-15deg);
+}
+.estilobotaobrilho::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 30px;
+    width: 30%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.1);
+    transition: 0.5s;
+    transform: skewX(-15deg);
+}
+.estilobotaobrilho:hover::before {
+    left: 100px;
+}
+.estilobotaobrilho:hover::after {
+    left: 100px;
 }
 /*Criar.js - Página Post*/
 .subtitulo{
@@ -106,7 +345,8 @@ html ,body {
 .seleção{
     display: grid;
     place-items: center;
-    padding-left:50px
+    padding-left:50px;
+    width:70%
 }
 .dadostitulo{
     display: grid;
@@ -115,6 +355,13 @@ html ,body {
 .dadostexto{
     display: grid;
     place-items: center;
+}
+.boxcriardados{
+    padding: 10px;
+}
+/* Editar.js -Página Put*/
+.dadostextoeditar{
+    padding: 10px;
 }
 /*Del.js - Página Del*/
 .caixadebotoes{
@@ -136,15 +383,41 @@ html ,body {
     place-items: center;
     background-image: linear-gradient(to right top, #1f549e, #6777b2, #9a9dc7, #c7c6dc, #f2f2f2);
     border-radius: 5px;
-    border: 7px solid black;
+    border: 3px solid black;
     margin:10px;
 }
 .layoutitemd{
     border-bottom: 5px solid #737373;
     border-radius: 15px;
 }
+@media(max-width: 850px){
+    .layoutitemd{
+        font-size: 15px;
+    }
+}
+@media(max-width: 500px){
+    .layoutitemd{
+        font-size: 5px;
+    }
+    .tb{
+        width:50%;
+        font-size: 5px;
+    }
+}
 /*NoPAge.js*/
 .nopagelayout{
     display: grid;
     place-items: center;
+}
+@media(max-width: 300px){
+    html ,body {
+        font-size: 50%;
+    }
+    .caixadel3{
+        width:50%
+    }
+    .tamanhoimagemcaixa{
+        width:50px;
+        height:50px
+    }
 }

@@ -5,7 +5,7 @@ import Home from "./pages/Home";
 import Get from "./pages/Ver";
 import Post from "./pages/Criar";
 import Edit from "./pages/Editar";
-import Del from "./pages/Del";
+import Dele from "./pages/Dele";
 import NoPage from "./NoPage";
 import "./index.css";
 
@@ -18,7 +18,7 @@ export default function App() {
           <Route path="/Get" element={<Get />} />
           <Route path="/Post" element={<Post />} />
           <Route path="/Editar/:barra/:id" element={<Edit />} />
-          <Route path="/Deletar/:barra/:id" element={<Del />} />
+          <Route path="/Deletar/:barra/:id" element={<Dele />} />
           <Route path="*" element={<NoPage />} />
         </Route>
       </Routes>

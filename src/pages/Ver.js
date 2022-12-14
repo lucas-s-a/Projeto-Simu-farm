@@ -1,24 +1,25 @@
 import axios from "axios";
-import React, { useState,useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import Loading from "../componentes/Loading"
+import logo from "../Imagens/UNIFARMA.png"
 
 const Listar = () => {
-  const [dados,setDados] = useState([]);
-  const [barra,setBarra] = useState('');
+  const [dados, setDados] = useState([]);
+  const [barra, setBarra] = useState('');
   const [loading, setLoading] = useState(true);
-  const [removerLoading,setRemoverLoading] = useState(false)
+  const [removerLoading, setRemoverLoading] = useState(false)
 
   useEffect(() => {
     const loadData = async () => {
       await new Promise((r) => setTimeout(r, 2000));
       setLoading((loading) => !loading);
     };
-      
+
     loadData();
   }, [])
-  
-  let Url = `https://projeto-apredendoo-servidor-json.vercel.app/`+barra;
+
+  let Url = `https://projeto-apredendoo-servidor-json.vercel.app/` + barra;
   function Cdados() {
     setRemoverLoading(true)
     setTimeout(() => {
@@ -26,12 +27,12 @@ const Listar = () => {
         setDados(res.data);
         setRemoverLoading(false)
       });
-    },2000)
+    }, 2000)
   }
   if (loading) {
     return <div className="caixagrid"><div className="elemento"><Loading /></div></div>
   }
-  else{
+  else {
     return (<>
       <div className="container-grid">
         <header className="itemheader">
@@ -39,10 +40,22 @@ const Listar = () => {
         </header>
         <br></br>
         <main>
-          <div className="caixa">
-            <div className="item1">
-              <h1>Buscar Dados</h1>
-              <select className="form-select" onChange={(e)=>{const selecao = e.target.value;setBarra(selecao)}}>
+          <div className="containerprincipal">
+            <aside className="caixaver1">
+              <h4>Destaques</h4>
+              <div>
+                <img width="210px"  src={logo} alt="abc"/>
+                <p>Incremente seu treino</p>
+              </div>
+              <div>
+                <img width="210px" src={logo} alt="abc"/>
+                <p>Nova linha de cosméticos</p>
+              </div>
+            </aside>
+            <article className="caixaver2">
+              <h3 className="elementocaixatitulo">Buscar Dados</h3>
+              <img className="elementocaixaimagem" src={logo} alt="ilustração"/>
+              <select className="form-select selectmode" onChange={(e) => { const selecao = e.target.value; setBarra(selecao) }}>
                 <option value="Erro">---------</option>
                 <option value="Medicamentos">Medicamentos</option>
                 <option value="Vitaminas">Vitaminas</option>
@@ -57,46 +70,43 @@ const Listar = () => {
                 <option value="Cabelo">Cabelo</option>
                 <option value="Higiene-Pessoal">Higiene Pessoal</option>
               </select>
-              <div>
-                <br></br>
-                <button onClick={Cdados}>Buscar</button>
-                <br></br>
+              <br></br>
+              <button className="estilobotaobrilho elementobotaotitulo" onClick={Cdados}>Buscar</button>
+            </article>
+            <div className="caixaver3">
+              <div className="caixagridcarregar">
+                <div className="elemento">{removerLoading && <Loading />}</div>
+              </div>
+              <div className="caixadedados">
+                {dados.map((data) => {
+                  return <div key={data.id}>
+                    <div>
+                      <div className="dadosbuscados">
+                        <img className="tamanhoimagemcaixa" src={data.imgl} alt="imagenspegadas" />
+                      </div>
+                      <div className="dadosbuscados">
+                        <ul>
+                          <li>{data.nome}</li>
+                          <li>{data.descricao}</li>
+                          <li>{data.preco}</li>
+                        </ul>
+                      </div>
+                      <div className="dadosbuscados tamanhocaixa">
+                        <Link to={`/Editar/${barra}/${data.id}`}><button className="coresbtn">Editar</button></Link>
+                      </div>
+                      <div className="dadosbuscados tamanhocaixa">
+                        <Link to={`/Deletar/${barra}/${data.id}`}><button className="coresbtn">Deletar</button></Link>
+                      </div>
+                    </div>
+                  </div>
+                })}
               </div>
             </div>
-            <div className="item2">
-              <Link to={"/Post"} ><button>Adicionar Novos itens</button></Link>
-            </div>
-          </div>
-          <div className="caixagridcarregar">
-            <div className="elemento">{removerLoading && <Loading />}</div>
-          </div>
-          <hr></hr>
-          <div className="caixadedados">
-          {dados.map((data) => {
-            return <div key={data.id} className="caixadeinformação">
-                <div className="imag">
-                  <img width="100px" height="100px" src={data.imgl} alt="imagenspegadas"/>
-                </div>
-                <div className="dadostexto">
-                  <ul>
-                    <li>{data.nome}</li>
-                    <li>{data.descricao}</li>
-                    <li>{data.preco}</li>
-                  </ul>
-                </div>
-                <div className="links">
-                  <Link to={`/Editar/${barra}/${data.id}`}><button className="linktamanho">Editar</button></Link>
-                </div>
-                <div className="links">
-                  <Link to={`/Deletar/${barra}/${data.id}`}><button className="linktamanho">Deletar</button></Link>
-                </div>
-            </div> 
-          })}
           </div>
         </main>
       </div>
-      
-      </>)
+
+    </>)
   }
 };
 export default Listar;
