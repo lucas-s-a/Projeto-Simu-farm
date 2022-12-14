@@ -1,6 +1,7 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { Link, useNavigate, useParams } from "react-router-dom";
+import {motion} from 'framer-motion'
 
 const Deld = () => {
   const { barra,id } = useParams();
@@ -21,7 +22,12 @@ const Deld = () => {
     }));
   }
 
-  return(<div className="delete-responsivo">
+  return(<motion.div className="delete-responsivo"
+  initial={{translateX: 0}}
+  animate={{translateX: 0}}
+  exit={{translateX: -3000, x: 100}}
+  transition={{delay: 1}}
+  >
     <div className="itemheader">
       <header>
         <h1>Risca da Lista</h1>
@@ -52,7 +58,7 @@ const Deld = () => {
         <button className="bt2 estilobotaobrilho tb" onClick={()=>deletar()}>Riscar da lista</button>
       </div>
     </main>
-  </div>);
+  </motion.div>);
 };
   
 export default Deld;

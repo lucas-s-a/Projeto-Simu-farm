@@ -3,6 +3,7 @@ import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import Loading from "../componentes/Loading"
 import logo from "../Imagens/UNIFARMA.png"
+import {motion} from 'framer-motion'
 
 const Listar = () => {
   const [dados, setDados] = useState([]);
@@ -36,7 +37,12 @@ const Listar = () => {
   }
   else {
     return (<>
-      <div className="container-grid">
+      <motion.div className="container-grid"
+        initial={{translateX: 0}}
+        animate={{translateX: 0}}
+        exit={{translateX: -3000, x: 100}}
+        transition={{delay: 1}}
+      >
         <header className="itemheader">
           <h1>Consulte aqui os itens na sua lista</h1>
         </header>
@@ -102,7 +108,36 @@ const Listar = () => {
             </div>
           </div>
         </main>
+        <div class="container">
+        <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
+          <p class="col-md-4 mb-0 text-muted"> &copy; 2022 SimuFarme, Inc</p>
+
+          <p
+            href="/"
+            class="col-md-4 d-flex align-items-center justify-content-center mb-3 mb-md-0 me-md-auto link-dark text-decoration-none"
+          ></p>
+
+          <ul class="nav col-md-4 justify-content-end">
+            <li class="nav-item">
+              <p  class="nav-link px-2 text-muted">
+                Home
+              </p>
+            </li>
+            <li class="nav-item">
+              <p class="nav-link px-2 text-muted">
+                Lista de Produtos
+              </p>
+            </li>
+            <li class="nav-item">
+              <p class="nav-link px-2 text-muted">Adicionar Novos Itens</p>
+            </li>
+            <li class="nav-item">
+              <p class="nav-link px-2 text-muted">Planos</p>
+            </li>
+          </ul>
+        </footer>
       </div>
+      </motion.div>
 
     </>)
   }

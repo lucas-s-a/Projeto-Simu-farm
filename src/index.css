@@ -589,6 +589,7 @@ body{
         flex-direction: column;
         align-items: center;
         gap: 20px;
+        height: 100%;
         z-index: 1;
         transform: translateX(120%);
     }
@@ -640,4 +641,5 @@ body{
             transform: translateX(0);
         }
     }
+
 }

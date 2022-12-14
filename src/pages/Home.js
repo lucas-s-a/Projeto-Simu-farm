@@ -6,25 +6,40 @@ import foto4 from "../Imagens/farm4.png";
 import s1 from "../Imagens/slid1.jpg";
 import s2 from "../Imagens/slid2.jpg";
 import s3 from "../Imagens/slid3.jpg";
+import { Link } from "react-router-dom";
+import {motion} from 'framer-motion'
 
 const Home = () => {
   return (
-    <div className="home">
+    <motion.div className="home"
+    initial={{translateX: 0}}
+    animate={{translateX: 0}}
+    exit={{translateX: -3000, x: 100}}
+    transition={{delay: 1}}
+    >
       <div className="col-md-12"></div>
       <div className="container">
         <div className="row" id="slide">
           <div className="col-md-4">
-            <h1 id="nossos-cursos">O que é o SimuFarme</h1>
+            <h1 id="nossos-cursos">O que é SimuFarme</h1>
             <ul>
-              <button className="botao-topico an">Acesse a Demo do sistema</button>
-              <button className="botao-topico an1">Acesse a Demo do sistema</button>
-              <button className="botao-topico an2">Acesse a Demo do sistema</button>
-              <button className="botao-topico an3">Acesse a Demo do sistema</button>
-              <button className="botao-topico an4">Acesse a Demo do sistema</button>
+              <button className="botao-topico an">
+                Sistema de dados para fármacias
+              </button>
+              <button className="botao-topico an1">
+                Simula dados do estoque no site
+              </button>
+              <button className="botao-topico an2">Pode testar figuras</button>
+              <button className="botao-topico an3">
+                Adicionar editar e deletar itens
+              </button>
+              <button className="botao-topico an4">
+                Planos com ótimos preços
+              </button>
             </ul>
-            <a href="produtos.html">
+            <Link to="/Get">
               <button className="botao-slide">Acesse a Demo do sistema</button>
-            </a>
+            </Link>
           </div>
 
           <br></br>
@@ -46,14 +61,6 @@ const Home = () => {
 
             <div className="carousel-inner">
               <div className="carousel-item active">
-                <img
-                  className="w-100"
-                  src="https://pharmaveritas.com.br/wp-content/themes/pharma/assets/img/dif-entrega.jpg"
-                  alt="programando"
-                />
-              </div>
-
-              <div className="carousel-item">
                 <img className="w-100" src={s1} alt="programando" />
               </div>
 
@@ -96,70 +103,122 @@ const Home = () => {
       </div>
 
       <div className="Empresas">
-        <div><img width="180px" src={foto1} alt="foto1"/></div>
-        <div><img width="180px" src={foto2} alt="foto1"/></div>
-        <div><img width="180px" src={foto3} alt="foto1"/></div>
-        <div><img width="180px" src={foto4} alt="foto1"/></div>
-        <div><img width="180px" src={foto1} alt="foto1"/></div>
+        <div>
+          <img width="180px" src={foto1} alt="foto1" />
+        </div>
+        <div>
+          <img width="180px" src={foto2} alt="foto1" />
+        </div>
+        <div>
+          <img width="180px" src={foto3} alt="foto1" />
+        </div>
+        <div>
+          <img width="180px" src={foto4} alt="foto1" />
+        </div>
+        <div>
+          <img width="180px" src={foto1} alt="foto1" />
+        </div>
       </div>
 
-      <div className="container py-3">
-    <div className="pricing-header p-3 pb-md-4 mx-auto text-center">
-        <h1 className="display-4 fw-normal">Nossos Planos</h1>
+      <div id="planos" className="container py-3">
+        <div className="pricing-header p-3 pb-md-4 mx-auto text-center">
+          <h1 className="display-4 fw-normal">Nossos Planos</h1>
+        </div>
+
+        <div className="row row-cols-1 row-cols-md-3 mb-3 text-center">
+          <div className="col">
+            <div className="card mb-4 rounded-3 shadow-sm">
+              <div className="card-header py-3">
+                <h4 className="my-0 fw-normal">Basic</h4>
+              </div>
+              <div className="card-body">
+                <h1 className="card-title pricing-card-title">
+                  $0<small className="text-muted fw-light">/mês</small>
+                </h1>
+                <ul className="list-unstyled mt-3 mb-4">
+                  <li>Até 3 categorias</li>
+                  <li>5 produtos em cada</li>
+                </ul>
+                <button
+                  type="button"
+                  className="w-100 btn btn-lg btn-outline-primary"
+                >
+                  Acesse seu sistema
+                </button>
+              </div>
+            </div>
+          </div>
+          <div className="col">
+            <div className="card mb-4 rounded-3 shadow-sm">
+              <div className="card-header py-3">
+                <h4 className="my-0 fw-normal">Pro</h4>
+              </div>
+              <div className="card-body">
+                <h1 className="card-title pricing-card-title">
+                  $15<small className="text-muted fw-light">/mês</small>
+                </h1>
+                <ul className="list-unstyled mt-3 mb-4">
+                  <li></li>
+                  <li>Até 10 categorias</li>
+                  <li>20 produtos em cada</li>
+                </ul>
+                <button type="button" className="w-100 btn btn-lg btn-primary">
+                  Assine Agora
+                </button>
+              </div>
+            </div>
+          </div>
+          <div className="col">
+            <div className="card mb-4 rounded-3 shadow-sm border-primary">
+              <div className="card-header py-3 text-bg-primary border-primary">
+                <h4 className="my-0 fw-normal">Enterprise</h4>
+              </div>
+              <div className="card-body">
+                <h1 className="card-title pricing-card-title">
+                  $29<small className="text-muted fw-light">/mês</small>
+                </h1>
+                <ul className="list-unstyled mt-3 mb-4">
+                  <li>Até 15 categorias</li>
+                  <li>100 produtos em cada</li>
+                </ul>
+                <button type="button" className="botao-slide w-100 btn">
+                  Assine Agora
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
-    
-  
-    
-      <div className="row row-cols-1 row-cols-md-3 mb-3 text-center">
-        <div className="col">
-          <div className="card mb-4 rounded-3 shadow-sm">
-            <div className="card-header py-3">
-              <h4 className="my-0 fw-normal">Basic</h4>
-            </div>
-            <div className="card-body">
-              <h1 className="card-title pricing-card-title">$0<small className="text-muted fw-light">/mês</small></h1>
-              <ul className="list-unstyled mt-3 mb-4">
-                <li>Até 3 categorias</li>
-                <li>5 produtos em cada</li>
-              </ul>
-              <button type="button" className="w-100 btn btn-lg btn-outline-primary">Acesse seu sistema</button>
-            </div>
-          </div>
-        </div>
-        <div className="col">
-          <div className="card mb-4 rounded-3 shadow-sm">
-            <div className="card-header py-3">
-              <h4 className="my-0 fw-normal">Pro</h4>
-            </div>
-            <div className="card-body">
-              <h1 className="card-title pricing-card-title">$15<small className="text-muted fw-light">/mês</small></h1>
-              <ul className="list-unstyled mt-3 mb-4">
-                <li></li>
-                <li>Até 10 categorias</li>
-                <li>20 produtos em cada</li>
-              </ul>
-              <button type="button" className="w-100 btn btn-lg btn-primary">Assine Agora</button>
-            </div>
-          </div>
-        </div>
-        <div className="col">
-          <div className="card mb-4 rounded-3 shadow-sm border-primary">
-            <div className="card-header py-3 text-bg-primary border-primary">
-              <h4 className="my-0 fw-normal">Enterprise</h4>
-            </div>
-            <div className="card-body">
-              <h1 className="card-title pricing-card-title">$29<small className="text-muted fw-light">/mês</small></h1>
-              <ul className="list-unstyled mt-3 mb-4">
-              <li>Até 15 categorias</li>
-              <li>100 produtos em cada</li>
-              </ul>
-              <button type="button" className="botao-slide w-100 btn">Assine Agora</button>
-            </div>
-          </div>
-        </div>
+      <div class="container">
+        <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
+          <p class="col-md-4 mb-0 text-muted"> &copy; 2022 SimuFarme, Inc</p>
+
+          <p
+            href="/"
+            class="col-md-4 d-flex align-items-center justify-content-center mb-3 mb-md-0 me-md-auto link-dark text-decoration-none"
+          ></p>
+
+          <ul class="nav col-md-4 justify-content-end">
+            <li class="nav-item">
+              <p  class="nav-link px-2 text-muted">
+                Home
+              </p>
+            </li>
+            <li class="nav-item">
+              <p class="nav-link px-2 text-muted">
+                Lista de Produtos
+              </p>
+            </li>
+            <li class="nav-item">
+              <p class="nav-link px-2 text-muted">Adicionar Novos Itens</p>
+            </li>
+            <li class="nav-item">
+              <p class="nav-link px-2 text-muted">Planos</p>
+            </li>
+          </ul>
+        </footer>
       </div>
-    </div>
-    </div>
+    </motion.div>
   );
 };
 
