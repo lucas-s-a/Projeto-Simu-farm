@@ -1,4 +1,4 @@
-﻿import React, { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { useNavigate, useParams,Link } from "react-router-dom";
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -39,7 +39,7 @@ const Editd = () => {
   }
   const navigate = useNavigate();
 
-  return (<div>
+  return (<div className="editar-responsivo">
     <div className="itemheader">
       <header>
         <h1>Atualizar Produto da lista {barra}</h1>

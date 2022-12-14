@@ -36,11 +36,11 @@ const Layout = () => {
               ref={menuHumburguer}
               className={`nav ${ativo ? "active" : "inactive"}`}
               >
-              <li className="ordemli"><Link to="/"><button className="estilobotao">Home</button></Link></li>
+              <li className={`ordemli ${!ativo ? "active" : "inactive"}`}  onClick={onClick}><Link to="/"><button className="estilobotao">Home</button></Link></li>
               <li className={`ordemli ${!ativo ? "active" : "inactive"}`}  onClick={onClick}><Link to="/Get">
                 <button className="estilobotao">Lista de Produtos</button>
               </Link></li>
-              <li className="ordemli"><Link to={"/Post"} ><button className="estilobotao">Adicionar Novos itens</button></Link></li>
+              <li className={`ordemli ${!ativo ? "active" : "inactive"}`}  onClick={onClick}><Link to={"/Post"} ><button className="estilobotao">Adicionar Novos itens</button></Link></li>
               <li className="ordemli"><button className="estilobotao">Sobre</button></li>
             </ul>
           </div>

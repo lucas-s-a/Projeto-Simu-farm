@@ -32,7 +32,7 @@ const Novod = () => {
 
   }
 
-  return (<div>
+  return (<div className="criar-responsivo">
     <div className="itemheader">
       <header>
         <h1>Adicionar um novo produto</h1>

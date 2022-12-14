@@ -44,12 +44,12 @@ const Listar = () => {
             <aside className="caixaver1">
               <h4>Destaques</h4>
               <div>
-                <img width="210px"  src={logo} alt="abc"/>
-                <p>Incremente seu treino</p>
+                <img width="210px" className="imagemdestaque1" src="https://www.nutrimundo.com.br/franquia-de-suplementos/public/img/default/franquia-de-suplementos/home/integral-medica-suplementos.jpg" alt="abc"/>
+                <p className="fontcolor"> Incremente seu treino</p>
               </div>
               <div>
-                <img width="210px" src={logo} alt="abc"/>
-                <p>Nova linha de cosméticos</p>
+                <img width="210px" className="imagemdestaque2" src="https://www.jacalculei.com.br/wp-content/uploads/2021/09/Como-abrir-uma-loja-de-cosme%CC%81ticos-.png" alt="abc"/>
+                <p className="fontcolor">Nova linha de cosméticos</p>
               </div>
             </aside>
             <article className="caixaver2">

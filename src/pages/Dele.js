@@ -17,7 +17,7 @@ const Deld = () => {
     axios.delete(`https://projeto-apredendoo-servidor-json.vercel.app/${barra}/${id}`).then(navigate("/Get"));
   }
 
-  return(<div>
+  return(<div className="delete-responsivo">
     <div className="itemheader">
       <header>
         <h1>Risca da Lista</h1>

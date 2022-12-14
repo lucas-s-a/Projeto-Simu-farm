@@ -4,7 +4,7 @@ import Layout from "./pages/Layout";
 import Home from "./pages/Home";
 import Get from "./pages/Ver";
 import Post from "./pages/Criar";
-import Edit from "./pages/Editar";
+import Edit from "./pages/Edit";
 import Dele from "./pages/Dele";
 import NoPage from "./NoPage";
 import "./index.css";

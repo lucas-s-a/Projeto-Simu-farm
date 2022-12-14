@@ -1,8 +1,14 @@
 /*Edições gerais*/
-html ,body {
+html{
     margin:0;
     padding:0;
 }
+body{
+    margin:0;
+    padding:0;
+    overflow-x: hidden;
+}
+/* Página home*/
 #slide{
     justify-content: space-between;
     width: 100%;
@@ -10,12 +16,13 @@ html ,body {
 }
 
 #slide h1{
-    color: #032CA6;
+    color: #880707;
     font-size: 2.6rem;
 }
 
 #slide li{
     font-size: 2.0rem;
+    text-decoration: none;
 }
 
 #slide .col-md-4 p{
@@ -23,8 +30,8 @@ html ,body {
     text-align: justify;
 }
 
-.botao-slide{
-    background: linear-gradient(to bottom left, #D90416 25%, #0339A6);
+.botao-topico{
+    background: linear-gradient(to bottom left, #2a55ca 25%, #2a0704);
     font-family:'Roboto', sans-serif;
     font-weight: 400;
     border: none;
@@ -32,7 +39,29 @@ html ,body {
     text-align: center;
     text-decoration: none;
     font-size: 20px;
-    margin-bottom:10px;
+    cursor: pointer;
+    border-radius: 5px;
+    width: 100%;
+    height: 42px;
+    transition: background 500ms, color 500ms;
+    margin:5px;
+}
+
+.botao-topico:hover{
+    background: linear-gradient(to bottom left, #2a0704 25%, #2a55ca );
+    border: 2px solid #070068;
+    color: #ffffff;
+}
+
+.botao-slide{
+    background: linear-gradient(to bottom left, #D90416 25%, #011132);
+    font-family:'Roboto', sans-serif;
+    font-weight: 400;
+    border: none;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    font-size: 20px;
     cursor: pointer;
     border-radius: 5px;
     width: 100%;
@@ -45,12 +74,33 @@ html ,body {
     border: 2px solid #700276;
     color: #700276;
 }
+
+/*Empresas*/
+.Empresas{
+    height: 200px;
+    width: 100%;
+    background-color: rgb(1, 35, 46);
+    color:white;
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+   
+}
+
+.Empresas div{
+    justify-content: center;
+    padding: 10px;
+    float: left;
+
+}
 /*Layout.js - Cabeçário Geral*/
 .blocop{
     display: grid;
     grid-template-areas: 
     "eb1 . eb2 eb2";
-    background-color: #1F549E
+    background-color: rgb(60, 60, 252);
 }
 .ebloco1{
     grid-area: eb1;
@@ -62,15 +112,18 @@ html ,body {
     display: grid;
 }
 .ordemli{
-    background: rgba(244, 43, 8, 0.8);
+    background: transparent;
+   
 }
 .estilobotao{
     padding: 20px;
-    background: rgba(244, 43, 8, 0.8);
-    border: rgba(244, 43, 8, 0.8) solid 1px; 
+    background: transparent;
+    border: transparent; 
+    color: white;
 }
 .ordemli :hover{
-    background: #D94A70;
+    background: #ffffea;
+    color: #070068;
 }
 
 /*Menu Hamburger*/
@@ -87,79 +140,12 @@ html ,body {
     margin: 4px;
     transition: 0.3s;
 }
-@media(max-width: 620px){
-    .nav{
-        display: none;
-        position: absolute;
-        top: 12.7vh;
-        right: 0vh;
-        width: 50vw;
-        height: 100%;
-        background: #23232e;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        gap: 25px;
-        z-index: 1;
-        transform: translateX(100%);
-    }
-    .ordemli{
-        display: flex;
-        justify-content: center;
-        width: 100%;
-        background: none;
-    }
-    .estilobotao{
-        background: none;
-        color: #fff;
-    }
-    .menu_hamburger{
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        position: relative;
-        left: 50px;
-    }
-    .nav.active{
-        display: grid;
-        transition: transform 1s ease-in-out;
-        animation: menuFade 2s ease forwards 0.3s;
-    }
-    
-    .menu_hamburger.active .linha1{
-        transform: rotate(-45deg) translate(-8px, 8px);
-    }
-    .menu_hamburger.active .linha2{
-        opacity: 0;
-    }
-    .menu_hamburger.active .linha3{
-        transform: rotate(45deg) translate(-5px, -7px);
-    }
-
-    .container{
-        z-index: -1;
-    }
-
-    @keyframes menuFade {
-        from{
-            opacity: 0;
-            transform: translateX(50px);
-        }
-        to{
-            opacity: 1;
-            transform: translateX(0);
-        }
-    }
-    .nav.active .ordemli, .estilobotao{
-        animation: menuFade 2s ease forwards 0.3s;
-    }
-}
-
 /*Ver.js - Página Get*/
 
 .container-grid{
     display: grid;
-    grid-template-areas:'header'
+    grid-template-areas:'header';
+    padding:50px
 }
 .itemheader{
     grid-area: header;
@@ -194,6 +180,16 @@ html ,body {
     width:250px;
     background-color: rgba(82, 30, 30, 0.1);
 }
+.fontcolor{
+    font-size: 20px;
+    color:#1b0303;
+}
+.imagemdestaque1{
+    box-shadow: 10px 5px 5px black;
+}
+.imagemdestaque2{
+    box-shadow: 10px 5px 5px black;
+}
 .caixaver2{
     display: grid;
     grid-area: caixaver2;
@@ -201,19 +197,19 @@ html ,body {
     gap:5px;
     margin:10px;
     grid-template-areas: 
-    "f4 f1 f1 f1"
+    "f1 f1 f1 f1"
     "f4 f2 f2 ."
     "f4 . f3 f3";
     background-color: rgba(82, 30, 30, 0.1);
 }
 .elementocaixatitulo{
-    background-color: #4c6fb4;
+    background: linear-gradient(to bottom left, #D90416 25%, #011132);
     grid-area: f1;
     padding: 2px;
     border: 2px solid black;
     font-family:'Roboto', sans-serif;
     color: white;
-    height: 60%;
+    height: 80%;
 }
 @media(max-width: 700px){
     .elementocaixatitulo{
@@ -238,11 +234,11 @@ html ,body {
 }
 .selectmode{
     padding: 10px;
-    background-color: #4872c7;
+    border:solid 2px #4872c7;
     grid-area: f2;
     width:70%;
     height: 80%;
-    color: white;
+    color: rgb(29, 28, 28);
 }
 .tamanhoimagemcaixa{
     width:100px;
@@ -274,18 +270,19 @@ html ,body {
 /*estilo dados layout*/
 .caixadedados{
     border-radius: 7px;
-    border: 5px solid gray;
-    padding: 0;
+    box-shadow: 3px 3px rgb(255, 255, 255), 0em 0 0.4em rgb(36, 36, 0);
+    padding: 5px;
+    background-color: #50041a;
     gap:20px;
-    background-color: #1F549E;
     display:grid;
     grid-template-columns: repeat(auto-fit,minmax(10rem,1fr));
 }
 .dadosbuscados {
-    border:1px solid black;
     height: 10rem;
+    background: linear-gradient(to bottom right,#F2F2F2,#d7e8ff);
     place-items: center;
     display: grid;
+    
 }
 .tamanhocaixa{
     height:100%;
@@ -295,6 +292,14 @@ html ,body {
     background: rgba(25, 3, 92, 0.8);
     border-radius: 5px;
     border: #23232e solid 1px;
+    background: linear-gradient(to bottom left, #000000 25%, #8f8a8a);
+    color: white;
+}
+.coresbtn:hover{
+    background: linear-gradient(to bottom left, #8f8a8a 25%, #000000);
+    border: 2px solid #070068;
+    color: #ffffff;
+
 }
 /*estilo visual botao pagina Ver.js*/
 .estilobotaobrilho{
@@ -381,14 +386,15 @@ html ,body {
 .caixadedadosdel{
     display: grid;
     place-items: center;
-    background-image: linear-gradient(to right top, #1f549e, #6777b2, #9a9dc7, #c7c6dc, #f2f2f2);
+    background:linear-gradient(to bottom left, #D90416 25%, #011132);;
     border-radius: 5px;
     border: 3px solid black;
     margin:10px;
 }
 .layoutitemd{
-    border-bottom: 5px solid #737373;
-    border-radius: 15px;
+    border-bottom: 5px solid #200303;
+    border-radius: 10px;
+    color:white;
 }
 @media(max-width: 850px){
     .layoutitemd{
@@ -397,11 +403,11 @@ html ,body {
 }
 @media(max-width: 500px){
     .layoutitemd{
-        font-size: 5px;
+        font-size: 6px;
     }
     .tb{
-        width:50%;
-        font-size: 5px;
+        width:70%;
+        font-size: 15px;
     }
 }
 /*NoPAge.js*/
@@ -409,15 +415,206 @@ html ,body {
     display: grid;
     place-items: center;
 }
-@media(max-width: 300px){
-    html ,body {
-        font-size: 50%;
+/*Responsivo Home*/
+
+@media(max-width: 620px){
+    .home .container{
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        z-index: -2;
     }
-    .caixadel3{
-        width:50%
+    .Empresas{
+        display: flex;
+        position: absolute;
+        z-index: -2;
     }
-    .tamanhoimagemcaixa{
-        width:50px;
-        height:50px
+    .container-grid{
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        padding: 0;
+        z-index: -2;
+    }
+    .criar-responsivo{
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        z-index: -2;
+    }
+    .containerprincipal{
+        display: flex;
+        flex-direction: column;
+    }
+    .seleção{
+        padding: 0;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+    .form-select{
+        width: 250px;
+    }
+}
+
+/*Responsivo Editar*/
+
+@media(max-width: 620px){
+    .editar-responsivo{
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        z-index: -2;
+    }
+}
+
+/*Responsivo Deletar*/
+
+@media(max-width: 620px){
+
+    .delete-responsivo{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        position: absolute;
+        z-index: -2;
+    }
+    .delete-responsivo main{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+    .caixadedadosdel{
+        width: 80%;
+        overflow: hidden;
+        display: flex;
+        align-items: center;
+    }
+    .caixadadosdel h2{
+        font-size: 18px;
+    }
+    .caixadadosdel div{
+        margin: 0;
+        width: 100%;
+    }
+}
+@media(max-width: 425px){
+
+    .delete-responsivo{
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        position: absolute;
+        z-index: -2;
+    }
+    .caixadedadosdel{
+        width: 90%;
+        overflow: hidden;
+    }
+    .caixadadosdel h2{
+        font-size: 18px;
+    }
+    .caixadadosdel div{
+        width: 80%;
+    }
+    .tb{
+        width: 60%;
+        font-size: 10px;
+    }
+}
+
+/*Responsivo Ver*/
+
+@media(max-width: 425px){
+    .containerprincipal{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    .caixaver2{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .elementocaixatitulo{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 10px;
+        width: 50%;
+    }
+}
+
+/*Menu Humburguer*/
+
+@media(max-width: 620px){
+    .nav{
+        display: none;
+        position: absolute;
+        top: 0vh;
+        right: 0vh;
+        width: 50vw;
+        height: 100%;
+        background: #23232e;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 50px;
+        z-index: -1;
+        transform: translateX(100%);
+    }
+    .ordemli{
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        background: none;
+    }
+    .estilobotao{
+        background: none;
+        color: #fff;
+    }
+    .menu_hamburger{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        left: 50px;
+    }
+    .nav.active{
+        display: flex;
+        transition: transform 1s ease-in-out;
+        animation: menuFade 2s ease forwards 0.3s;
+    }
+    
+    .menu_hamburger.active .linha1{
+        transform: rotate(-45deg) translate(-8px, 8px);
+    }
+    .menu_hamburger.active .linha2{
+        opacity: 0;
+    }
+    .menu_hamburger.active .linha3{
+        transform: rotate(45deg) translate(-5px, -7px);
+    }
+
+    .container{
+        z-index: -1;
+    }
+
+    @keyframes menuFade {
+        from{
+            opacity: 0;
+            transform: translateX(50px);
+        }
+        to{
+            opacity: 1;
+            transform: translateX(0);
+        }
+    }
+    .nav.active .ordemli, .estilobotao{
+        animation: menuFade 2s ease forwards 0.3s;
     }
 }
