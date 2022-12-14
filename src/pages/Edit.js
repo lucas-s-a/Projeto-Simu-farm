@@ -42,7 +42,7 @@ const Editd = () => {
   return (<div className="editar-responsivo">
     <div className="itemheader">
       <header>
-        <h1>Atualizar Produto da lista {barra}</h1>
+        <h1 className="tamanholetraeditar">Atualizar Produto da lista {barra}</h1>
       </header>
     </div>
     <div className="dadostextoeditar">
@@ -81,10 +81,10 @@ const Editd = () => {
         </div>
         <br></br>
         <div className="caixadebotoes">
-          <Link to={`/Get`} ><button className="estilobotaobrilho tb">Manter na Lista</button></Link>
-          <button className="bt2 estilobotaobrilho tb" type="submit"
+          <Link to={`/Get`} ><button className="estilobotaobrilho tbe">Voltar</button></Link>
+          <button className="bt2 estilobotaobrilho tbe" type="submit"
             onClick={Atualizar}
-          >Atualizar os Seguintes Dados</button>
+          >Atualizar Dados</button>
         </div>
       </form>
     </div>

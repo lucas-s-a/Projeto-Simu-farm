@@ -43,19 +43,15 @@ const Listar = () => {
           <div className="containerprincipal">
             <aside className="caixaver1">
               <h4>Destaques</h4>
-              <div>
-                <img width="210px" className="imagemdestaque1" src="https://www.nutrimundo.com.br/franquia-de-suplementos/public/img/default/franquia-de-suplementos/home/integral-medica-suplementos.jpg" alt="abc"/>
-                <p className="fontcolor"> Incremente seu treino</p>
-              </div>
-              <div>
-                <img width="210px" className="imagemdestaque2" src="https://www.jacalculei.com.br/wp-content/uploads/2021/09/Como-abrir-uma-loja-de-cosme%CC%81ticos-.png" alt="abc"/>
-                <p className="fontcolor">Nova linha de cosméticos</p>
-              </div>
+              <img width="210px" className="imagemdestaque1" src="https://www.nutrimundo.com.br/franquia-de-suplementos/public/img/default/franquia-de-suplementos/home/integral-medica-suplementos.jpg" alt="abc"/>
+              <p className="fontcolor"> Incremente seu treino</p>
+              <img width="210px" className="imagemdestaque2" src="https://www.jacalculei.com.br/wp-content/uploads/2021/09/Como-abrir-uma-loja-de-cosme%CC%81ticos-.png" alt="abc"/>
+              <p className="fontcolor">Nova linha de cosméticos</p>
             </aside>
             <article className="caixaver2">
-              <h3 className="elementocaixatitulo">Buscar Dados</h3>
+              <h3 className="elementocaixatitulo anv1">Pesquisar Itens</h3>
               <img className="elementocaixaimagem" src={logo} alt="ilustração"/>
-              <select className="form-select selectmode" onChange={(e) => { const selecao = e.target.value; setBarra(selecao) }}>
+              <select className="form-select selectmode anv2" onChange={(e) => { const selecao = e.target.value; setBarra(selecao) }}>
                 <option value="Erro">---------</option>
                 <option value="Medicamentos">Medicamentos</option>
                 <option value="Vitaminas">Vitaminas</option>
@@ -71,7 +67,7 @@ const Listar = () => {
                 <option value="Higiene-Pessoal">Higiene Pessoal</option>
               </select>
               <br></br>
-              <button className="estilobotaobrilho elementobotaotitulo" onClick={Cdados}>Buscar</button>
+              <button className="estilobotaobrilho anv3 elementobotaotitulo" onClick={Cdados}>Buscar</button>
             </article>
             <div className="caixaver3">
               <div className="caixagridcarregar">
@@ -85,7 +81,7 @@ const Listar = () => {
                         <img className="tamanhoimagemcaixa" src={data.imgl} alt="imagenspegadas" />
                       </div>
                       <div className="dadosbuscados">
-                        <ul>
+                        <ul className="fontdados">
                           <li>{data.nome}</li>
                           <li>{data.descricao}</li>
                           <li>{data.preco}</li>

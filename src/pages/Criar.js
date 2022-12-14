@@ -35,12 +35,12 @@ const Novod = () => {
   return (<div className="criar-responsivo">
     <div className="itemheader">
       <header>
-        <h1>Adicionar um novo produto</h1>
+        <h1 className="tamanholetracriar">Adicionar um novo produto</h1>
       </header>
     </div>
     <main>
       <div className="subtitulo">
-        <h2>Primeiro Escolha o tipo de produto</h2>
+        <h2 className="tamanholetracriar">Selecione o tipo de produto</h2>
       </div>
       <div className="seleção">
         <select className="form-select" onChange={(e) => { const selecao = e.target.value; setBarra(selecao) }}>
@@ -61,7 +61,7 @@ const Novod = () => {
       </div>
       <div className="boxcriardados">
         <div className="dadostitulo">
-          <h2>Agora informe as especificações do novo produto</h2>
+          <h2 className="tamanholetracriar">Agora informe as especificações do novo produto</h2>
         </div>
         <div className="dadostexto">
           <form className="row g-3 caixadel3">

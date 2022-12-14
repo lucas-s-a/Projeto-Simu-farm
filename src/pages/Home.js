@@ -3,6 +3,9 @@ import foto1 from "../Imagens/farm1.png";
 import foto2 from "../Imagens/farm2.png";
 import foto3 from "../Imagens/farm3.png";
 import foto4 from "../Imagens/farm4.png";
+import s1 from "../Imagens/slid1.jpg";
+import s2 from "../Imagens/slid2.jpg";
+import s3 from "../Imagens/slid3.jpg";
 
 const Home = () => {
   return (
@@ -13,11 +16,11 @@ const Home = () => {
           <div class="col-md-4">
             <h1 id="nossos-cursos">O que é o SimuFarme</h1>
             <ul>
-              <button class="botao-topico">Acesse a Demo do sistema</button>
-              <button class="botao-topico">Acesse a Demo do sistema</button>
-              <button class="botao-topico">Acesse a Demo do sistema</button>
-              <button class="botao-topico">Acesse a Demo do sistema</button>
-              <button class="botao-topico">Acesse a Demo do sistema</button>
+              <button class="botao-topico an">Acesse a Demo do sistema</button>
+              <button class="botao-topico an1">Acesse a Demo do sistema</button>
+              <button class="botao-topico an2">Acesse a Demo do sistema</button>
+              <button class="botao-topico an3">Acesse a Demo do sistema</button>
+              <button class="botao-topico an4">Acesse a Demo do sistema</button>
             </ul>
             <a href="produtos.html">
               <button class="botao-slide">Acesse a Demo do sistema</button>
@@ -51,15 +54,15 @@ const Home = () => {
               </div>
 
               <div class="carousel-item">
-                <img class="w-100" src="FOTO 2" alt="programando" />
+                <img class="w-100" src={s1} alt="programando" />
               </div>
 
               <div class="carousel-item">
-                <img class="w-100" src="FOTO 3" alt="programando" />
+                <img class="w-100" src={s2} alt="programando" />
               </div>
 
               <div class="carousel-item">
-                <img class="w-100" src="imagens/js-img.png" alt="programando" />
+                <img class="w-100" src={s3} alt="programando" />
               </div>
             </div>
 
