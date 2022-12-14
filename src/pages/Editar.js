@@ -77,7 +77,7 @@ const Editd = () => {
       </form>
       <br></br>
       <div>
-        <button className="btn estilosbtn"
+        <button 
           type="submit"
           onClick={Atualizar}
           >Atualizar os Seguintes Dados

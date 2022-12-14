@@ -36,7 +36,7 @@ const Novod = () => {
         <h2>Primeiro Escolha o tipo de produto</h2>
       </div>
       <div className="seleção">
-        <select className="form-select" aria-label="Default select example" onChange={(e)=>{const selecao = e.target.value;setBarra(selecao)}}>
+        <select className="form-select" onChange={(e)=>{const selecao = e.target.value;setBarra(selecao)}}>
           <option value="">Selecione</option>
           <option value="Medicamentos">Medicamentos</option>
           <option value="Vitaminas">Vitaminas</option>
@@ -93,7 +93,7 @@ const Novod = () => {
           </form>
           <br></br>
           <div>
-            <button className="btn estilosbtn"
+            <button
               type="submit"
               onClick={submitForm}
               >Adicionar a lista

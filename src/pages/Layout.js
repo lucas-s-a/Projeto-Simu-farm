@@ -1,6 +1,7 @@
 import { Outlet, Link } from "react-router-dom";
 import {useState,useEffect} from "react";
-import Loading from "../componentes/Loading"
+import Loading from "../componentes/Loading";
+import logo from "../Imagens/UNIFARMA.png"
 
 const Layout = () => {
   const [loading, setLoading] = useState(true);
@@ -21,21 +22,17 @@ const Layout = () => {
         <header>
           <div className="blocop">
             <div className="ebloco1">
-              <img className="bloco1" width="100px" src='' alt="logo"/>
+              <img className="bloco1" width="100px" src={logo} alt="logo"/>
             </div>
             <div className="ebloco2">
-              <div>
-                <ul className="bloco2">
-                  <Link to="/"><li>Home</li></Link>
-                  <Link to="/Get"><li>Lista de Produtos</li></Link>
-                  <li>
-                    Contato
-                  </li>
-                  <li>
-                    Sobre
-                  </li>
-                </ul>
-              </div>
+              <ul className="nav">
+                <li className="ordemli"><Link to="/"><button className="estilobotao">Home</button></Link></li>
+                <li className="ordemli"><Link to="/Get">
+                  <button className="estilobotao">Lista de Produtos</button>
+                </Link></li>
+                <li className="ordemli"><button className="estilobotao">Contato</button></li>
+                <li className="ordemli"><button className="estilobotao">Sobre</button></li>
+              </ul>       
             </div>
           </div>
         </header>      

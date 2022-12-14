@@ -7,21 +7,30 @@ html ,body {
     display: grid;
     grid-template-areas: 
     "eb1 . eb2 .";
-    padding: 2%;
+    background-color: #1F549E
 }
 .ebloco1{
     grid-area: eb1;
     display: grid;
+    place-items: center;
 }
 .ebloco2{
     grid-area: eb2;
     display: grid;
+    grid-template-areas: 
+    "ib21 ib22 ib23 ib24";
 }
-.bloco2{
-    grid-template-columns: auto auto auto auto;
-    display: grid;
+.ordemli{
+    background: rgba(244, 43, 8, 0.8);
 }
-
+.estilobotao{
+    padding: 20px;
+    background: rgba(244, 43, 8, 0.8);
+    border: rgba(244, 43, 8, 0.8) solid 1px; 
+}
+.ordemli :hover{
+    background: #D94A70;
+}
 /*Ver.js - Página Get*/
 
 .container-grid{
@@ -53,20 +62,24 @@ html ,body {
     grid-area: aa;
     display: grid;
     place-items: center;
-    padding: 30%;
+    padding: 10%;
 }
 /*Estilo dados*/
 .caixadedados{
+    border-radius: 7px;
+    border: 5px solid gray;
     padding: 5px;
-    background-color: bisque;
+    background-color: #1F549E;
     display:grid;
     gap:20px;
     grid-template-areas:
      "caixadeinformação caixadeinformação caixadeinformação caixadeinformação";
 }
 .caixadeinformação {
-    border:solid 10px rgb(91, 81, 81);
-    background: linear-gradient(to bottom right,white,bisque);
+    padding: 5px;
+    border:solid 10px #737373;
+    border-radius: 7px;
+    background: linear-gradient(to bottom right,#F2F2F2,#183B6A);
 }
 .imag{
     padding: 2px;
@@ -104,28 +117,34 @@ html ,body {
     place-items: center;
 }
 /*Del.js - Página Del*/
-.caixadadosdel{
+.caixadebotoes{
     display: grid;
     place-items: center;
-    background:linear-gradient(to right bottom,white,rgb(32, 144, 218));
-    border-radius: 10px;
+    grid-template-areas: 
+    ". bts1 bts2 .";
 }
-.Manterlista{
+.bt1{
+    display: grid;
+    grid-area:bts1;
+}
+.bt2{
+    display: grid;
+    grid-area:bts2;
+}
+.caixadedadosdel{
     display: grid;
     place-items: center;
-    background-color: aliceblue;
+    background-image: linear-gradient(to right top, #1f549e, #6777b2, #9a9dc7, #c7c6dc, #f2f2f2);
+    border-radius: 5px;
+    border: 7px solid black;
+    margin:10px;
 }
-.fotourl{
-    padding-left:100px;
-    border-bottom: 5px rgb(74, 71, 71) solid;
-    border-radius: 10px;
-    padding: 30px;
+.layoutitemd{
+    border-bottom: 5px solid #737373;
+    border-radius: 15px;
 }
-.itemc{
-    border-bottom: 5px rgb(71, 65, 65) solid;
-    border-radius: 10px;
-    padding: 30px;
-}
-.estilosbtn{
-    background: rgb(57, 90, 199);
+/*NoPAge.js*/
+.nopagelayout{
+    display: grid;
+    place-items: center;
 }

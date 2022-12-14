@@ -35,14 +35,14 @@ const Listar = () => {
     return (<>
       <div className="container-grid">
         <header className="itemheader">
-          <h1>Veja aqui o itens que estão na sua lista de desejos</h1>
+          <h1>Consulte aqui os itens na sua lista</h1>
         </header>
         <br></br>
         <main>
           <div className="caixa">
             <div className="item1">
               <h1>Buscar Dados</h1>
-              <select onChange={(e)=>{const selecao = e.target.value;setBarra(selecao)}}>
+              <select className="form-select" onChange={(e)=>{const selecao = e.target.value;setBarra(selecao)}}>
                 <option value="Erro">---------</option>
                 <option value="Medicamentos">Medicamentos</option>
                 <option value="Vitaminas">Vitaminas</option>
@@ -64,7 +64,7 @@ const Listar = () => {
               </div>
             </div>
             <div className="item2">
-              <button><Link to={"/Post"} >Adicionar Novos itens</Link></button>
+              <Link to={"/Post"} ><button>Adicionar Novos itens</button></Link>
             </div>
           </div>
           <div className="caixagridcarregar">
