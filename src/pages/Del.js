@@ -29,26 +29,26 @@ const Deld = () => {
     </div>
     <div>
       <div>
-        <Link to={`/`}>Manter na Lista</Link>
+        <Link to={`/`} className="Manterlista">Manter na Lista</Link>
         {dados && (
-          <div>
-            <div className="i2">
-              <h2>
+          <div className="caixadadosdel">
+            <div>
+              <h2 className="itemc">
                 Nome: {dados.nome}
               </h2>
-              <h2>
+              <h2 className="itemc">
                 Preço: {dados.preco}
               </h2>
-              <h2>
+              <h2 className="itemc">
                 Descrição: {dados.descricao}
               </h2>
-              <h2>
+              <h2 className="fotourl">
                 Foto :{dados.imgl}
               </h2>
             </div>
             <br></br>
             <div>
-              <button onClick={()=>deletar()}>Riscar da lista</button>
+              <button className="btn estilosbtn" onClick={()=>deletar()}>Riscar da lista</button>
             </div>
           </div>
         )}

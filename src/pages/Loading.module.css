@@ -6,6 +6,8 @@
     border: 6px solid #e5e5e5;
     border-top-color:#51d4db;
     border-radius: 50%;
+    display:flex;
+    justify-items: center;
 }
 @keyframes rodando{
     to {

@@ -11,17 +11,13 @@ const Layout = () => {
           <div className="i2">
             <div>
               <ul className="emlinhas">
+                <Link to="/"><li className="itens">Home</li></Link>
+                <Link to="/Get"><li className="itens">Ver Lista</li></Link>
                 <li className="itens">
-                  <Link to="/">Home</Link>
+                  Contato
                 </li>
                 <li className="itens">
-                  <Link to="/Get">Ver Lista</Link>
-                </li>
-                <li className="itens">
-                  <p>Contato</p>
-                </li>
-                <li className="itens">
-                  <p>Sobre</p>
+                  Sobre
                 </li>
               </ul>
             </div>

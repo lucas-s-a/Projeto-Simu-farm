@@ -27,9 +27,7 @@ const Listar = () => {
     <main>
       <div className="caixa">
         <div className="item1">
-          <nav>
-            <h1>todos os dados</h1>
-          </nav>
+          <h1>Buscar Dados</h1>
           <select onChange={(e)=>{const selecao = e.target.value;setBarra(selecao)}}>
             <option value="Erro">---------</option>
             <option value="Medicamentos">Medicamentos</option>
@@ -56,27 +54,26 @@ const Listar = () => {
           <button><Link to={"/Post"} >Adicionar Novos itens</Link></button>
         </div>
       </div>
-      <div>
+      <hr></hr>
+      <div className="caixadedados">
       {dados.map((data) => {
-        return <div key={data.id}>
-          <div className="caixadados">
-            <div>
-              <img width="100px" src={data.imgl} alt="imagenspegadas"/>
+        return <div key={data.id} className="caixadeinformação">
+            <div className="imag">
+              <img width="100px" height="100px" src={data.imgl} alt="imagenspegadas"/>
             </div>
-            <div>
+            <div className="dadostexto">
               <ul>
                 <li>{data.nome}</li>
                 <li>{data.descricao}</li>
                 <li>{data.preco}</li>
               </ul>
             </div>
-            <div>
-              <Link to={`/Editar/${barra}/${data.id}`}>Editar</Link>
+            <div className="links">
+              <Link to={`/Editar/${barra}/${data.id}`}><button className="linktamanho">Editar</button></Link>
             </div>
-            <div>
-              <Link to={`/Deletar/${barra}/${data.id}`}>Deletar</Link>
+            <div className="links">
+              <Link to={`/Deletar/${barra}/${data.id}`}><button className="linktamanho">Deletar</button></Link>
             </div>
-          </div>
         </div> 
       })}
       </div>

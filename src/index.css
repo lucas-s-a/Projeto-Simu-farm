@@ -1,3 +1,7 @@
+html ,body {
+    margin:0;
+    padding:0;
+}
 /*Layout.js - Cabeçário Geral*/
 .emlinhas{
     display: grid;
@@ -7,19 +11,22 @@
 .itens{
     border: 1px black solid;
     list-style: none;
+    padding: 20px;
+    background-color: aquamarine;
 }
 .emlinha2{
     display: grid;
     row-gap: 5px;
     grid-template-columns: auto auto;
+    background:linear-gradient(to bottom right,white,blue)
 }
 .posimg{
     margin: 30px;
     padding: 10px;
     border: 1px black solid;
 }
-.i2{
-    border: 1px black solid;
+.linktamanhoc{
+    width:30vh;
 }
 
 /*Ver.js - Página Get*/
@@ -32,6 +39,7 @@
     grid-area: header;
     text-align: center;
 }
+/* Main */
 .item1{
     grid-area:item1
 }
@@ -41,12 +49,79 @@
 .caixa{
     display: grid;
     grid-template-areas:
-        "item1 item1 item1 item2";
+        ". item1 . item2";
 }
-.caixadados{
-    border:black 1px solid;
+/*Estilo dados*/
+.caixadedados{
+    padding: 5px;
+    background-color: bisque;
+    display:grid;
+    gap:20px;
+    grid-template-areas:
+     "caixadeinformação caixadeinformação caixadeinformação caixadeinformação";
+}
+.caixadeinformação {
+    border:solid 10px rgb(91, 81, 81);
+    background: linear-gradient(to bottom right,white,bisque);
+}
+.imag{
+    padding: 2px;
     display: grid;
-    grid-template-columns: auto auto auto auto;
-    row-gap:50px
+    place-items: center;
 }
-
+.dadostexto{
+    list-style: none;
+    height:200px
+}
+.links{
+    padding: 5px;
+    display: grid;
+    place-items: center;
+}
+.linktamanho{
+    width:30vh
+}
+/*Criar.js - Página Post*/
+.subtitulo{
+    display: grid;
+    place-items: center;
+}
+.seleção{
+    display: grid;
+    place-items: center;
+    padding-left:50px
+}
+.dadostitulo{
+    display: grid;
+    place-items: center;
+}
+.dadostexto{
+    display: grid;
+    place-items: center;
+}
+/*Del.js - Página Del*/
+.caixadadosdel{
+    display: grid;
+    place-items: center;
+    background:linear-gradient(to right bottom,white,rgb(32, 144, 218));
+    border-radius: 10px;
+}
+.Manterlista{
+    display: grid;
+    place-items: center;
+    background-color: aliceblue;
+}
+.fotourl{
+    padding-left:100px;
+    border-bottom: 5px rgb(74, 71, 71) solid;
+    border-radius: 10px;
+    padding: 30px;
+}
+.itemc{
+    border-bottom: 5px rgb(71, 65, 65) solid;
+    border-radius: 10px;
+    padding: 30px;
+}
+.estilosbtn{
+    background: rgb(57, 90, 199);
+}

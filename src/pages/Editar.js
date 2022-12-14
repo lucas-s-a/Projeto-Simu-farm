@@ -1,12 +1,10 @@
 import axios from "axios";
-import estilos from "./Formestilo.module.css"
 import React, { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 const Editd = () => {
   const { id,barra } = useParams();
-  console.log(id)
-  console.log(barra)
 
   const [nome, setNome] = useState("");
   const [preco, setPreco] = useState("");
@@ -42,40 +40,44 @@ const Editd = () => {
         <h1>Atualizar Produto da lista {barra}</h1>
       </header>
     </div>
-    <div>
-      <form className={estilos.caixaform}>
-            <div className={estilos.itemcaixatitulo}>
-              <label className={estilos.itemlabel1}>Nome:</label>
-              <label className={estilos.itemlabel2}>Preço:</label>
-              <label className={estilos.itemlabel3}>Descrição:</label>
-              <label className={estilos.itemlabel4}>Url da Imagem:</label>
-            </div>
-            <div className={estilos.itemcaixatitulo}>
-              <input className={estilos.iteminput1}
+    <div className="dadostexto">
+      <form class="row g-3">
+            <div class="col-md-4">
+              <label class="form-label">Nome:</label>
+              <input class="form-control"
                 value={nome}
                 type="text"
                 onChange={(e) => setNome(e.target.value)}
               />
-              <input className={estilos.iteminput2}
+            </div>
+            <div>
+              <label class="form-label">Preço:</label>
+              <input class="form-control"
                 value={preco}
                 type="text"
                 onChange={(e) => setPreco(e.target.value)}
               />
-              <input className={estilos.iteminput3}
+            </div>
+            <div>
+              <label class="form-label">Descrição:</label>
+              <textarea class="form-control"
                 value={descricao}
                 type="text"
                 onChange={(e) => setDescricao(e.target.value)}
               />
-              <input className={estilos.iteminput4}
+            </div>
+            <div>
+              <label class="form-label">Url da Imagem:</label>
+              <textarea class="form-control"
                 value={imgl}
               type="text"
               onChange={(e) => setImgl(e.target.value)}
               />
-            </div>
+            </div>    
       </form>
       <br></br>
       <div>
-        <button
+        <button className="btn estilosbtn"
           type="submit"
           onClick={Atualizar}
           >Atualizar os Seguintes Dados
