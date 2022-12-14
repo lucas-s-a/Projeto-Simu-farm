@@ -26,6 +26,8 @@ const Listar = () => {
       axios.get(Url).then((res) => {
         setDados(res.data);
         setRemoverLoading(false)
+      }).catch((error) => {
+        console.error('Error:', error);
       });
     }, 2000)
   }

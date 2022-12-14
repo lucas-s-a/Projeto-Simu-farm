@@ -7,14 +7,18 @@ const Deld = () => {
   const [dados, setDados] = useState([]);  
   useEffect(() => {
     axios.get(`https://projeto-apredendoo-servidor-json.vercel.app/${barra}/${id}`).then((res) => {
-      setDados(res.data);
+      setDados(res.data).catch((error) => {
+        console.error('Error:', error);
+      })
     });
   }, [barra,id]);
 
   const navigate = useNavigate();
 
   function deletar() {
-    axios.delete(`https://projeto-apredendoo-servidor-json.vercel.app/${barra}/${id}`).then(navigate("/Get"));
+    axios.delete(`https://projeto-apredendoo-servidor-json.vercel.app/${barra}/${id}`).then(navigate("/Get").catch((error) => {
+      console.error('Error:', error)
+    }));
   }
 
   return(<div className="delete-responsivo">

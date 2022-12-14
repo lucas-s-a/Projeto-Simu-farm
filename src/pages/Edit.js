@@ -34,7 +34,9 @@ const Editd = () => {
     } else if (descricao.length > 100) {
       alert("Sua descrição atingiu o número máximo de 120 caracteres permitidos")
     } else {
-      axios.put(`https://projeto-apredendoo-servidor-json.vercel.app/${barra}/${id}`, data).then(navigate("/Get"));
+      axios.put(`https://projeto-apredendoo-servidor-json.vercel.app/${barra}/${id}`, data).then(navigate("/Get").catch((error) => {
+        console.error('Error:', error);
+      }));
     }
   }
   const navigate = useNavigate();
