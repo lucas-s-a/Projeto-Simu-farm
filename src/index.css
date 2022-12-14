@@ -3,30 +3,23 @@ html ,body {
     padding:0;
 }
 /*Layout.js - Cabeçário Geral*/
-.emlinhas{
+.blocop{
     display: grid;
-    row-gap: 5px;
+    grid-template-areas: 
+    "eb1 . eb2 .";
+    padding: 2%;
+}
+.ebloco1{
+    grid-area: eb1;
+    display: grid;
+}
+.ebloco2{
+    grid-area: eb2;
+    display: grid;
+}
+.bloco2{
     grid-template-columns: auto auto auto auto;
-}
-.itens{
-    border: 1px black solid;
-    list-style: none;
-    padding: 20px;
-    background-color: aquamarine;
-}
-.emlinha2{
     display: grid;
-    row-gap: 5px;
-    grid-template-columns: auto auto;
-    background:linear-gradient(to bottom right,white,blue)
-}
-.posimg{
-    margin: 30px;
-    padding: 10px;
-    border: 1px black solid;
-}
-.linktamanhoc{
-    width:30vh;
 }
 
 /*Ver.js - Página Get*/
@@ -50,6 +43,17 @@ html ,body {
     display: grid;
     grid-template-areas:
         ". item1 . item2";
+}
+.caixagridcarregar{
+    display:grid;
+    grid-template-areas:
+    ". aa aa .";
+  }
+.elemento{
+    grid-area: aa;
+    display: grid;
+    place-items: center;
+    padding: 30%;
 }
 /*Estilo dados*/
 .caixadedados{
