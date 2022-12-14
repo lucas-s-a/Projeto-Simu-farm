@@ -31,7 +31,7 @@ const Editd = () => {
     e.preventDefault();
     if (nome.length === 0 || descricao.length === 0 || preco.length === 0 || imgl.length === 0) {
       alert("Existe algum campo em branco")
-    } else if (descricao.length > 120) {
+    } else if (descricao.length > 100) {
       alert("Sua descrição atingiu o número máximo de 120 caracteres permitidos")
     } else {
       axios.put(`https://projeto-apredendoo-servidor-json.vercel.app/${barra}/${id}`, data).then(navigate("/Get"));

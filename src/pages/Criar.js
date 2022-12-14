@@ -24,7 +24,7 @@ const Novod = () => {
     e.preventDefault();
     if (nome.length === 0 || descricao.length === 0 || preco.length === 0 || imgl.length === 0) {
       alert("Existe algum campo em branco")
-    } else if (descricao.length > 120) {
+    } else if (descricao.length > 100) {
       alert("Sua descrição atingiu o número máximo de 120 caracteres permitidos")
     } else {
       axios.post(Url, data).then(navigate("/Get"));
@@ -99,7 +99,7 @@ const Novod = () => {
             </div>
             <br></br>
             <div className="caixadebotoes">
-              <Link to={`/Get`} ><button className="estilobotaobrilho tb">Manter na Lista</button></Link>
+              <Link to={`/Get`} ><button className="estilobotaobrilho tb">Voltar</button></Link>
               <button className="bt2 estilobotaobrilho tb" type="submit"
                 onClick={submitForm}
               >Adicionar a lista</button>

@@ -41,7 +41,7 @@ const Listar = () => {
         <br></br>
         <main>
           <div className="containerprincipal">
-            <aside className="caixaver1">
+            <aside className="caixaver1 anv3">
               <h4>Destaques</h4>
               <img width="210px" className="imagemdestaque1" src="https://www.nutrimundo.com.br/franquia-de-suplementos/public/img/default/franquia-de-suplementos/home/integral-medica-suplementos.jpg" alt="abc"/>
               <p className="fontcolor"> Incremente seu treino</p>
@@ -60,7 +60,7 @@ const Listar = () => {
                 <option value="Tratamentos_Capilares">Tratamentos Capilares</option>
                 <option value="Saude_Sexual">Público Masculino</option>
                 <option value="Ortopedicos">Ortopedicos</option>
-                <option value="Alimentacao_infantil">Alimentacao Infantil</option>
+                <option value="Alimentacao_infantil">Mundo Infantil</option>
                 <option value="Suplementos_Academia">Suplementos Academia</option>
                 <option value="Beleza">Beleza</option>
                 <option value="Cabelo">Cabelo</option>

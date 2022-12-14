@@ -6,7 +6,7 @@ import Get from "./pages/Ver";
 import Post from "./pages/Criar";
 import Edit from "./pages/Edit";
 import Dele from "./pages/Dele";
-import NoPage from "./NoPage";
+import NoPage from "./pages/NoPage";
 import "./index.css";
 
 export default function App() {
